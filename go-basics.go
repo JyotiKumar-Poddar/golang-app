@@ -54,14 +54,6 @@ func main() {
 	amount := 107.99
 	fmt.Println("amount is of type ", reflect.TypeOf(amount))
 
-	// Variables declared with initial value  or default value
-	var idNumber int
-	var floatNumber float64
-	var isBoolean bool
-	var emptyString string
-	fmt.Printf("idNumber ={%v} floatNumber= {%v} isBoolean= {%v} emptyString={%q}\n",
-		idNumber, floatNumber, isBoolean, emptyString)
-
 }
 
 func swapNames(a string, b string) (string, string) {
@@ -73,7 +65,7 @@ func multiply(x, y int) int {
 	return x * y
 }
 
-// In naked return the argument name must be declared like hare (reminder int, multiplied int)
+// In naked return the argument name must be declared like here (reminder int, multiplied int)
 func divideAndMultiplyByTwo(x int) (reminder int, multiplied int) {
 	reminder = x / 2
 	multiplied = x * 2
