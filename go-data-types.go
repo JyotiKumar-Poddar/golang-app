@@ -24,17 +24,26 @@ The int, uint, and uintptr types are usually 32 bits wide on 32-bit systems
 and 64 bits wide on 64-bit systems. When you need an integer value you should use
 int unless you have a specific reason to use a sized or unsigned integer typ
 */
+
 var (
-	ToBe   bool       = false
-	MaxInt uint64     = 1<<64 - 1
-	z      complex128 = cmplx.Sqrt(-5 + 12i)
+	ToBe        bool       = false
+	MaxInt      uint64     = 1<<64 - 1
+	z           complex128 = cmplx.Sqrt(-5 + 12i)
+	int32Value  rune       = -100
+	stringValue string     = "Hi"
+)
+
+const (
+	goodMorningMessage   = "Good Morning!"
+	goodAfterNoonMessage = "Good Afternoon"
+	// intValue := 47 not allowed with := in cost block
 )
 
 func main() {
-	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
+	print(goodMorningMessage)
+	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe) // T for type
 	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
 	fmt.Printf("Type: %T Value: %v\n", z, z)
-
 	// Variables declared with initial value  or default value
 	var idNumber int
 	var floatNumber float64
@@ -53,6 +62,17 @@ func main() {
 	var float64Value float64 = math.Sqrt(float64(a + b)) // here also explicit type cast required
 	fmt.Println("float64Value", float64Value)
 
-	var float64Value2 float64 = math.Sqrt((2 + 4))
+	var float64Value2 float64 = math.Sqrt(2 + 4)
 	fmt.Println("float64Value2", float64Value2)
+
+	//Constants are declared like variables, but with the const keyword.
+	//Constants cannot be declared using the := syntax.
+	const Pi = 3.14
+	fmt.Println(2 << 1)
+	Println(Pi)
+	print(goodAfterNoonMessage)
+}
+
+func Println(Pi float32) {
+	fmt.Printf("hey hey ...%v\n", Pi)
 }

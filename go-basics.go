@@ -8,11 +8,11 @@ import (
 	"time"
 )
 
-var gobasic string
+var goBasic string
 
 func main() {
-	gobasic = "This program is about basics of Go programming language"
-	fmt.Println("Hello from Go language  ->", gobasic)
+	goBasic = "This program is about basics of Go programming language"
+	fmt.Println("Hello from Go language  ->", goBasic)
 	// use of rand package
 	fmt.Println("Your luck number is  ", rand.Int())
 
@@ -44,7 +44,8 @@ func main() {
 	// A var declaration can include initializers, one per variable.
 	var i, j int = 1, 2 // here type declaration can be removed
 	var c, python, java = true, false, "no!"
-	fmt.Println(i, j, c, python, java)
+	var num = 200 // data type is decided by the compiler based on the value assigned
+	fmt.Println(i, j, c, python, java, num)
 
 	// Short variable declarations  using type inference
 
@@ -53,6 +54,11 @@ func main() {
 
 	amount := 107.99
 	fmt.Println("amount is of type ", reflect.TypeOf(amount))
+	// A function can return n number of values
+	//var p, q, r, s, t int = return5Value()
+	p, q, r, s, t := return5Value()
+	//or var p, q, r, s, t int = return5Value()
+	fmt.Printf("p =%v q =%v r =%v s =%v t =%v ", p, q, r, s, t)
 
 }
 
@@ -70,4 +76,8 @@ func divideAndMultiplyByTwo(x int) (reminder int, multiplied int) {
 	reminder = x / 2
 	multiplied = x * 2
 	return
+}
+
+func return5Value() (a int, b int, c int, d int, e int) {
+	return 1, 3, 4, 5, 6
 }
